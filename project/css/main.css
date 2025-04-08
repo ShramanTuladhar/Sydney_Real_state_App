@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(240, 240, 240);
+}
+
+/* Navbar Styles */
+.navbar {
+  position: sticky;
+  top: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  height: 60px;
+}
+
+.navbar .menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .menu a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin: 25px;
+}
+
+.navbar .login {
+    color: black;
+}
+
+.navbar .signup-button {
+    background-color: rgb(74, 206, 74);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .signup-button:hover {
+    background-color: rgb(60, 180, 60);
+}
+
+/* Dropdown Styles */
+.dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position it below the profile link */
+    background-color: white; /* Background color for dropdown */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.signup-button:hover + .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown li {
+    padding: 10px; /* Add padding for dropdown items */
+}
+
+.dropdown li a {
+    color: black; /* Text color for dropdown links */
+    text-decoration: none; /* Remove underline */
+}
+
+.dropdown li a:hover {
+    background-color: rgb(220, 220, 220); /* Change background on hover */
+}
+
+/* Poster Section */
+.poster {
+    margin-top: 20px;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-image: url('path-to-your-poster-image.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Needed for positioning the sliding pictures */
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Ensure the slideshow container respects its bounds */
+.slideshow-container {
+    position: absolute;
+    bottom: 20px; /* Adjust spacing from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    width: 80%; /* Adjust the width as needed */
+    max-width: 600px; /* Optional: Set a maximum width */
+    overflow: hidden; /* Prevent images from overflowing */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a background to the slideshow */
+    padding: 10px; /* Optional: Add padding inside the slideshow */
+}
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .slideshow-container {
+        width: 70%; /* Smaller width on smaller screens */
+        max-width: 400px; /* Smaller max width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .slideshow-container {
+        width: 90%; /* Increase width to utilize more space on very small screens */
+        max-width: none; /* Remove max width restriction */
+    }
+}
+
+
+
+/* Ensure the slides are the same size and fit the container */
+.mySlides img {
+    width: 100%; /* Make sure the image width is always 100% of the container */
+    height: auto; /* Allow height to adjust proportionally */
+    object-fit: cover; /* Scale the image to cover the container while preserving aspect ratio */
+    border-radius: 8px; /* Match container's rounded corners */
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 30px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    text-align: center;
+    animation: glow 0.7s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgb(252, 252, 252), 0 0 20px rgb(255, 215, 247), 0 0 30px #f36fb1, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+        text-shadow: 0 0 20px rgb(255, 38, 128), 0 0 30px #fb03ff, 0 0 40px #f61a88, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+/* Footer styles */
+.footer {
+    background-color: #f8f8f8; /* Light gray background */
+    padding: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #888; /* Gray text color */
+    border-top: 1px solid #ddd; /* Optional: border at the top of the footer */
+}
+
+.footer-social {
+    margin-bottom: 10px;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    color: #888; /* Gray icon color */
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    color: #555; /* Darker gray on hover */
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-links a {
+    color: #888; /* Gray text color */
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #555; /* Darker gray on hover */
+    text-decoration: underline;
+}
